@@ -1,4 +1,5 @@
 class BaseClass{
+  //constructor for all the sub classes
     constructor(x, y, width, height, angle) {
         var options = {
             'restitution':0.8,

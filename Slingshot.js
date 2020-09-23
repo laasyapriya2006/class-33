@@ -13,10 +13,12 @@ class SlingShot{
         this.sling = Constraint.create(options);
         World.add(world, this.sling);
     }
+    //assigned thte bodyA position to the object created(bird)
     attach(body){
         this.sling.bodyA = body;
     }
     
+    //detaches the bird fom the catapult
     fly(){
         this.sling.bodyA = null;
     }
@@ -24,13 +26,13 @@ class SlingShot{
     display(){
         image(this.sling1,200,20);
         image(this.sling2,170,20);
-        if(this.sling.bodyA){
+        if(this.sling.bodyA != null){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             push();
-            
             stroke(48,22,8);
             if(pointA.x < 220) {
+                //rubber band effect
                 strokeWeight(7);
                 line(pointA.x - 20, pointA.y, pointB.x -10, pointB.y);
                 line(pointA.x - 20, pointA.y, pointB.x + 30, pointB.y - 3);
